@@ -2,22 +2,29 @@ import * as C from './styles'
 import { useState } from 'react'
 
 
-export const AddArea = ({ onEnter }) => {
+export const AddArea = ({ list, setList }) => {
     const [inputText, setInputText] = useState('')
-    const handleKeyUp = (e) => {
-        if (e.keycode === 'Enter' && inputText !== '') {
-            onEnter(inputText)
-        }
+
+    const addTarefa = () => {
+        let newList = [...list]
+        newList.push({
+            id: list.length + 1,
+            name: inputText,
+            done: false
+        })
+        setList(newList)
     }
 
     return (
         <C.Container>
-            <div className='image'>➕</div>
+            <div onClick={addTarefa}
+                className='image'>➕</div>
             <input
                 type='text'
-                placeholder='Adicione uma Tarefa'
                 value={inputText}
+                placeholder='Adicione uma Tarefa'
                 onChange={e => setInputText(e.target.value)}
+
             />
         </C.Container>
     )
