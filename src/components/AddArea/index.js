@@ -13,10 +13,15 @@ export const AddArea = ({ list, setList }) => {
             done: false
         })
         setList(newList)
+        setInputText('')
     }
 
+
     return (
-        <C.Container>
+        <C.Container onSubmit={(e) => {
+            e.preventDefault()
+            addTarefa()
+        }}>
             <div onClick={addTarefa}
                 className='image'>➕</div>
             <input
