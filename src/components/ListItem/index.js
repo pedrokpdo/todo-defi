@@ -5,7 +5,7 @@ export const ListItem = ({item}) => {
     const [checked, setChecked] = useState(item.done)
 
     return (
-        <C.Container>
+        <C.Container done={checked}>
             <input 
             type='checkbox' 
             checked={checked}
