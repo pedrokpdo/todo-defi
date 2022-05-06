@@ -5,7 +5,7 @@ import { ListItem } from './components/ListItem'
 const App = () => {
   const todos = [
     {id:1, name:'Comprar Pao', done: false},
-    {id:2, name:'Comprar bolo', done: false},
+    {id:2, name:'Comprar bolo', done: true},
     {id:3, name:'Comprar maçã', done: false},
   ]
   
